@@ -17,7 +17,7 @@ const Card = ({ pokemon, key }) => {
     >
       <p style={{ width: "90%", paddingLeft: "6px" }}>{pokemon.name}</p>
       <button
-        style={{ height: "20px", width: "10%" }}
+        style={{ height: "20px", margin: "2px" }}
         onClick={() => navigate(`/detail/${pokemon.name}`)}
         data-testid="btn-detail-pokemon"
       >

@@ -10,26 +10,28 @@ const ListPokemons = () => {
   };
 
   return (
-    <div
-      style={{
-        margin: "auto",
-        width: "500px",
-      }}
-      data-testid="listaPokemon"
-    >
-      {pokemons?.length > 0 &&
-        pokemons
-          .sort((a, b) => {
-            if (a.name < b.name) {
-              return -1;
-            }
-            if (a.name > b.name) {
-              return 1;
-            }
+    <>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(150px,2fr))",
+        }}
+      >
+        {pokemons?.length > 0 &&
+          pokemons
+            .sort((a, b) => {
+              if (a.name < b.name) {
+                return -1;
+              }
+              if (a.name > b.name) {
+                return 1;
+              }
 
-            return 0;
-          })
-          .map((poke) => <Card pokemon={poke} key={poke.name} />)}
+              return 0;
+            })
+            .map((poke) => <Card pokemon={poke} key={poke.name} />)}
+      </div>
+
       <button
         data-testid="btn-readMore"
         onClick={readMore}
@@ -37,7 +39,7 @@ const ListPokemons = () => {
       >
         Load more
       </button>
-    </div>
+    </>
   );
 };
 
