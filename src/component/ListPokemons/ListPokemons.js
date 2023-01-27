@@ -10,11 +10,12 @@ const ListPokemons = () => {
   };
 
   return (
-    <>
+    <div style={{ maxWidth: "900px", margin: "auto" }}>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(150px,2fr))",
+          gridTemplateColumns: "repeat(auto-fit,minmax(100px,300px))",
+          margin: "auto",
         }}
       >
         {pokemons?.length > 0 &&
@@ -39,7 +40,7 @@ const ListPokemons = () => {
       >
         Load more
       </button>
-    </>
+    </div>
   );
 };
 
